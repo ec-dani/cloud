@@ -1,0 +1,4 @@
+FROM python:3.9
+COPY data_generator1.py /app/data_generator1.py
+RUN pip install requests
+CMD ["python3", "/app/data_generator1.py"]
