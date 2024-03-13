@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2 class="table-title">Data collected by sensors</h2>
+    <table border="1">
+        <tr>
+            <th>Timestap</th>
+            <th>Sensor_ID</th>
+            <th>Humans Detected</th>
+            <th>Unknown Detected</th>
+        </tr>
+        {% for entry in data %}
+        <tr>
+            <td>{{entry.timestamp}}</td>
+            <td>{{entry.sensor_id}}</td>
+            <td>{{entry.humans_detected}}</td>
+            <td>{{entry.unknown_detected}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

@@ -1,0 +1,90 @@
+body{
+/* Styles for the table title */
+background-color:#97e09f;
+.welcome-container {
+  text-align: center;
+  margin-top: 100px;
+  padding: 20px;
+}
+
+/* Styles for the welcome title */
+.welcome-title {
+  font-size: 36px;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Styles for the welcome text */
+.welcome-text {
+  font-size: 18px;
+  color: #333;
+  margin-top: 20px;
+}
+.table-title {
+    text-align: center; /* Center the text */
+    margin-top: 20px; /* Add some space above the title */
+    font-size: 24px; /* Increase font size */
+    color: #333; /* Set color to a darker shade */
+    text-transform: uppercase; /* Convert text to uppercase */
+    letter-spacing: 2px; /* Add spacing between letters */
+    font-weight: bold; /* Make text bold */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Add a subtle shadow */
+  }
+  
+  /* Styles for the table */
+  table {
+    width: 100%; /* Make the table fill its container */
+    border-collapse: collapse; /* Collapse the borders between table cells */
+    margin-bottom: 20px; /* Add some space below the table */
+  }
+  
+  /* Styles for table headers */
+  th {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    font-weight: bold; /* Bold text */
+    padding: 8px; /* Padding around text */
+    text-align: left; /* Align text to the left */
+  }
+  
+  /* Styles for table rows */
+  tr:nth-child(even) {
+    background-color: #f2f2f2; /* Light gray background for even rows */
+  }
+  
+  /* Styles for table cells */
+  td {
+    padding: 8px; /* Padding around text */
+    border-bottom: 1px solid #ddd; /* Bottom border for each cell */
+  }
+  
+  /* Hover effect for table rows */
+  tr:hover {
+    background-color: #ddd; /* Darker background on hover */
+  }
+}
+.buttons-container {
+  margin-top: 20px;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #338a38;
+}
+
+/* Styles for the sections */
+.hidden {
+  display: none;
+}

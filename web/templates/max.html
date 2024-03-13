@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MinMax</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2 class="table-title">Max Unknown Humans Detected from each sensor</h2>
+    <table border="1">
+        <tr>
+            <th>Sensor_ID</th>
+            <th>Max Unknown Detected</th>
+        </tr>
+        {% for entry in data %}
+        <tr>
+            <td>{{entry._id}}</td>
+            <td>{{entry.max_uhd}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

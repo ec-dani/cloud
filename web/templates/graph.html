@@ -1,0 +1,90 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRAPH</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js" integrity="sha512-L0Shl7nXXzIlBSUUPpxrokqq4ojqgZFQczTYlGjzONGTDAcLremjwaWv5A+EDLnxhQzY5xUZPWLOLqYRkY0Cbw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <div>
+        <h1>Total Human Dectected & Unknown Humas Detected</h1>
+        <canvas id="myChart"></canvas>
+    </div>
+    <div>
+        <h1>Average Humans Detected</h1>
+        <canvas id="myChart2"></canvas>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  const ctx = document.getElementById('myChart');
+  const ctx2 = document.getElementById('myChart2');
+
+  
+  let data = JSON.parse({{sensor_graph_data | tojson}});
+  let sensor_labes= data.map( item => item.sensor_id)
+  let humans_detected = data.map( item => item.humans_detected)
+  let unknown_humans_detected = data.map( item => item.unknown_detected)
+  let average_humans_detected = data.map( item => item.average_humans_detected)
+  let average_unknown_detected = data.map( item => item.average_unknown_detected)
+
+
+
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: sensor_labes,
+      datasets: [
+        {
+            label: '#Humans Detected',
+            data: humans_detected,
+            borderWidth: 1
+        },
+        {
+            label: '#Unknonw Humans Detected',
+            data: unknown_humans_detected,
+            borderWidth: 1,
+            backgroungColor: '#f0a898',
+        }
+    ]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+  new Chart(ctx2, {
+    type: 'line',
+    data: {
+      labels: sensor_labes,
+      datasets: [
+        {
+            label: 'Average Humans Detected',
+            data: average_humans_detected,
+            borderWidth: 1
+        },
+        {
+            label: 'Average Unknonw Humans Detected',
+            data: average_unknown_detected,
+            borderWidth: 1,
+            backgroungColor: '#f0a898',
+        }
+    ]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
+
+</body>
+</html>
